@@ -1,0 +1,1 @@
+C:\Users\danpo\source\repos\Converter\Converter\Converter.csproj;x64

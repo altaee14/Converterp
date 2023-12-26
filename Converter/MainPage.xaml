@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Converter.MainPage"
+             xmlns:local="clr-namespace:Converter"
+             x:DataType="local:ConverterViewModel">
+
+
+
+    <ScrollView>
+        
+    <Grid RowDefinitions="50, 40, 40, *, 40, 40, 40"
+              ColumnDefinitions="100, 100, 100, *"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              >
+        
+            <DatePicker Date="{Binding Exchange_data.Date}" Format="dd/mm/yyyy" HorizontalOptions="Center" Grid.Row="1" Grid.Column="5"></DatePicker>
+
+            <Entry Grid.Column="0"
+               Grid.Row="0" Grid.ColumnSpan="2"
+               Placeholder="Enter num"
+               PlaceholderColor="LightSlateGray"
+               VerticalTextAlignment="End"
+               
+               x:Name="firstEntry"
+               Text="{Binding firstValute.EntryText}"
+               />
+
+       
+       
+        <Picker Grid.Row="1"
+         Grid.Column="0"
+         Grid.ColumnSpan="2"
+         WidthRequest="210"
+         ItemsSource="{Binding CurName}" 
+         SelectedItem="{Binding firstValute.SelectedItem}" 
+         SelectedIndex="{Binding firstValute.SelectedIndex}"/>
+       
+        <Picker Grid.Row="2"
+         Grid.Column="0"
+         Grid.ColumnSpan="2"
+         WidthRequest="210"
+         ItemsSource="{Binding CurName}" 
+         SelectedItem="{Binding secondValute.SelectedItem}" 
+         SelectedIndex="{Binding secondValute.SelectedIndex}"/>
+
+        <Entry Grid.Column="0"
+               Grid.Row="3" 
+               Placeholder="Enter num"
+               VerticalTextAlignment="End"
+               Grid.ColumnSpan="2"
+               Text="{Binding secondValute.EntryText}"
+        />
+
+            <Button Text="Converter"
+                Grid.Column="0"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Black" 
+                BorderColor="White"
+                TextColor="White"        
+                x:Name="Converte_btn"
+                />
+        </Grid>
+</ScrollView>
+
+
+</ContentPage>
